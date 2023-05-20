@@ -235,7 +235,7 @@ body {
 
 @media only screen and (min-width:1158px) {
   .hero {
-    max-width: 1158px;
+    max-width: 1440px;
 
     padding-top: 188px;
     padding-bottom: 188px;
@@ -448,11 +448,9 @@ body {
   }
 }
 
-
-
 /* features style end */
 
-/* doing style start -----------------------*/
+/* doing style start --------------------------*/
 
 .doing {
   padding-bottom: 120px;
@@ -488,27 +486,61 @@ body {
 
 /* team style start -----------------------------*/
 
+
 .team {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  margin: 0 auto;
+  max-width: 428px;
+
+  padding-top: 96px;
+  padding-bottom: 96px;
+
   background-color: var(--section-bg-color);
+}
+
+@media only screen and (min-width:768px) {
+  .team {
+    max-width: 768px;
+
+  }
+}
+
+@media only screen and (min-width:1158px) {
+  .team {
+    max-width: 1440px;
+
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 }
 
 .team-list {
   display: flex;
+  flex-wrap: wrap;
+
+  row-gap: 72px;
+  column-gap: 24px;
+
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .team-list {
+    row-gap: 64px;
+  }
 }
 
 .team-list-item {
-  margin-right: 24px;
+  /* margin-right: 24px; */
 
   background-color: var(--primary-bg-color);
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-.team-list-item:last-child {
+/* .team-list-item:last-child {
   margin-right: 0;
-}
+} */
 
 .team-card-text {
   padding: 32px 0 32px;
