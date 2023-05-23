@@ -326,11 +326,7 @@ body {
   transform: translateX(0);
 }
 
-@media only screen and (max-width: 428px) {
-  .menu-container {
-    width: 428px;
-  }
-}
+
 
 .menu-container .menu-toggle {
   position: absolute;
