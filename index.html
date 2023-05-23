@@ -114,13 +114,45 @@
                 <h2 class="doing-title">What are we doing</h2>
                 <ul class="list doing-list">
                     <li class="doing-list-item">
-                        <img class="img doing-img" src="./images/doing/desktop.jpg" alt="Desktop version" width="360">
+                        <picture>
+                            <!-- Desktop -->
+                            <source media="(min-width: 1158px)"
+                                srcset="./images/doing/img-1desk@1x.webp 1x, ./images/doing/img-1desk@2x.webp 2x"
+                                type="image/webp">
+
+                            <source media="(min-width: 1158px)"
+                                srcset="./images/doing/img-1desk@1x.jpg 1x, ./images/doing/img-1desk@2x.jpg 2x"
+                                type="image/jpg">
+
+                            <img class="img doing-img" src="./images/doing/img-1desk@1x.jpg" alt="Desktop version"
+                                width="360" loading="lazy">
+                        </picture>
                     </li>
                     <li class="doing-list-item">
-                        <img class="img doing-img" src="./images/doing/mobile.jpg" alt="Mobile version" width="360">
+                        <picture>
+                            <source media="(min-width: 1158px )"
+                                srcset="./images/doing/img-2desk@1x.webp 1x, ./images/doing/img-2desk@2x.webp 2x"
+                                type="image/webp">
+
+                            <source media="(min-width: 1158px )"
+                                srcset="./images/doing/img-2desk@1x.jpg 1x, ./images/doing/img-2desk@2x.jpg 2x"
+                                type="image/jpg">
+                            <img class="img doing-img" src="./images/doing/img-2desk@1x.jpg" alt="Mobile version"
+                                width="360" loading="lazy">
+                        </picture>
                     </li>
                     <li class="doing-list-item">
-                        <img class="img doing-img" src="./images/doing/img.jpg" alt="Using method" width="360">
+                        <picture>
+                            <source media="(min-width: 1158px )"
+                                srcset="./images/doing/img-3desk@1x.webp 1x, ./images/doing/img-3desk@2x.webp 2x"
+                                type="image/webp">
+                            <source media="(min-width: 1158px )"
+                                srcset="./images/doing/img-3desk@1x.jpg 1x, ./images/doing/img-3desk@2x.jpg 2x"
+                                type="image/jpg">
+                            <img class="img doing-img" src="./images/doing/img-3desk@1x.jpg" alt="Using method"
+                                width="360" loading="lazy">
+
+                        </picture>
                     </li>
                 </ul>
             </div>
@@ -132,7 +164,9 @@
                 <h2 class="team-title">Our Team</h2>
                 <ul class="list team-list">
                     <li class="team-list-item">
-                        <img class="img team-img" src="./images/team/mark.jpg" width="264" alt="Mark Guerrero">
+                        <img class="img team-img"
+                            srcset="./images/team/img_mob-1@1x.jpg 1x, ./images/team/img_mob-1@2x.jpg 2x"
+                            src="./images/team/img_mob-1@1x.jpg 1x" width="264" src="" alt="Mark Guerrero">
                         <div class="team-card-text">
                             <h3 class="team-subtitle">Mark Guerrero</h3>
                             <p class="team-desc">Product Designer</p>
@@ -173,7 +207,9 @@
                         </div>
                     </li>
                     <li class="team-list-item">
-                        <img class="img team-img" src="./images/team/tom.jpg" width="264" alt="Tom Ford">
+                        <img class="img team-img"
+                            srcset="./images/team/img_mob-2@1x.jpg 1x, ./images/team/img_mob-2@2x.jpg 2x"
+                            src="./images/team/img_mob-2@1x.jpg 1x" width="264" alt="Tom Ford">
                         <div class="team-card-text">
                             <h3 class="team-subtitle">Tom Ford</h3>
                             <p class="team-desc">Frontend Developer</p>
@@ -206,7 +242,9 @@
                         </div>
                     </li>
                     <li class="team-list-item">
-                        <img class="img team-img" src="./images/team/camila.jpg" width="264" alt="Camila Garcia">
+                        <img class="img team-img"
+                            srcset="./images/team/img_mob-3@1x.jpg 1x, ./images/team/img_mob-3@2x.jpg 2x"
+                            src="./images/team/img_mob-3@1x.jpg 1x" width="264" alt="Camila Garcia">
                         <div class="team-card-text">
                             <h3 class="team-subtitle">Camila Garcia</h3>
                             <p class="team-desc">Marketing</p>
@@ -239,7 +277,9 @@
                         </div>
                     </li>
                     <li class="team-list-item">
-                        <img class="img team-img" src="./images/team/danile.jpg" width="264" alt="Daniel Wilson">
+                        <img class="img team-img"
+                            srcset="./images/team/img_mob-4@1x.jpg 1x, ./images/team/img_mob-4@2x.jpg 2x"
+                            src="./images/team/img_mob-4@1x.jpg 1x" width="264" alt="Daniel Wilson">
                         <div class="team-card-text">
                             <h3 class="team-subtitle">Daniel Wilson</h3>
                             <p class="team-desc">UI Designer</p>
@@ -389,7 +429,7 @@
     </footer>
     <!-- backdrop-modal -->
 
-    <!-- <div class="backdrop is-hidden" data-modal>
+    <div class="backdrop is-hidden" data-modal>
         <div class="modal">
             <button type="button" class="close-btn" data-modal-close>
                 <svg class="close-icon" width="8" height="8">
@@ -446,64 +486,66 @@
             </form>
         </div>
     </div>
-    <script src="./js/modal.js"></script> -->
+    <script src="./js/modal.js"></script>
     <div class="menu-container js-menu-container" id="mobile-menu">
-        <button class="menu-toggle js-close-menu">
-            <svg width="24" height="24">
-                <use href="./images/icons.svg#icon-close-black"></use>
-            </svg>
-        </button>
+        <div class="wrapper-mobile-menu">
+            <button class="menu-toggle js-close-menu">
+                <svg width="24" height="24">
+                    <use href="./images/icons.svg#icon-close-black"></use>
+                </svg>
+            </button>
 
-        <ul class="list mobile-menu-nav">
-            <li class="mobile-nav-item"><a href="" class="link mobile-nav-link">Studio</a></li>
-            <li class="mobile-nav-item"><a href="" class="link mobile-nav-link">Portfolio</a></li>
-            <li class="mobile-nav-item"><a href="" class="link mobile-nav-link">Contacts</a></li>
-        </ul>
-        <ul class="list mobile-menu-contacts">
-            <li class="mobile-contact-item"><a class="link mobile-tel-link" href="tel:+110001111111">+11 (000)
-                    111-11-11</a></li>
-            <li class="mobile-contact-item"><a class="link mobile-mail-link"
-                    href="mailto:info@devstudio.com">info@devstudio.com</a>
-            </li>
-        </ul>
-        <ul class="list mobile-icon-list ">
-            <li class="mobile-icon-item">
-                <a href="" class="link mobile-icon-link" target="_blank" rel="noopener noreferrer"
-                    aria-label="icon-instagram">
-                    <svg class="mobile-social-icon" width="24" height="24">
-                        <use href="./images/icons.svg#icon-instagram-2"></use>
-                    </svg>
+            <ul class="list mobile-menu-nav">
+                <li class="mobile-nav-item"><a href="" class="link mobile-nav-link">Studio</a></li>
+                <li class="mobile-nav-item"><a href="" class="link mobile-nav-link">Portfolio</a></li>
+                <li class="mobile-nav-item"><a href="" class="link mobile-nav-link">Contacts</a></li>
+            </ul>
+            <ul class="list mobile-menu-contacts">
+                <li class="mobile-contact-item"><a class="link mobile-tel-link" href="tel:+110001111111">+11 (000)
+                        111-11-11</a></li>
+                <li class="mobile-contact-item"><a class="link mobile-mail-link"
+                        href="mailto:info@devstudio.com">info@devstudio.com</a>
+                </li>
+            </ul>
+            <ul class="list mobile-icon-list ">
+                <li class="mobile-icon-item">
+                    <a href="" class="link mobile-icon-link" target="_blank" rel="noopener noreferrer"
+                        aria-label="icon-instagram">
+                        <svg class="mobile-social-icon" width="24" height="24">
+                            <use href="./images/icons.svg#icon-instagram-2"></use>
+                        </svg>
 
-                </a>
-            </li>
-            <li class="mobile-icon-item">
-                <a href="" class="link mobile-icon-link" target="_blank" rel="noopener noreferrer"
-                    aria-label="icon-twitter">
-                    <svg class="mobile-social-icon" width="24" height="24">
-                        <use href="./images/icons.svg#icon-twitter-1"></use>
-                    </svg>
+                    </a>
+                </li>
+                <li class="mobile-icon-item">
+                    <a href="" class="link mobile-icon-link" target="_blank" rel="noopener noreferrer"
+                        aria-label="icon-twitter">
+                        <svg class="mobile-social-icon" width="24" height="24">
+                            <use href="./images/icons.svg#icon-twitter-1"></use>
+                        </svg>
 
-                </a>
-            </li>
-            <li class="mobile-icon-item">
-                <a href="" class="link mobile-icon-link" target="_blank" rel="noopener noreferrer"
-                    aria-label="icon-facebook">
-                    <svg class="mobile-social-icon" width="24" height="24">
-                        <use href="./images/icons.svg#icon-facebook-1"></use>
-                    </svg>
+                    </a>
+                </li>
+                <li class="mobile-icon-item">
+                    <a href="" class="link mobile-icon-link" target="_blank" rel="noopener noreferrer"
+                        aria-label="icon-facebook">
+                        <svg class="mobile-social-icon" width="24" height="24">
+                            <use href="./images/icons.svg#icon-facebook-1"></use>
+                        </svg>
 
-                </a>
-            </li>
-            <li class="mobile-icon-item">
-                <a href="" class="link mobile-icon-link" target="_blank" rel="noopener noreferrer"
-                    aria-label="icon-linkedin">
-                    <svg class="mobile-social-icon" width="24" height="24">
-                        <use href="./images/icons.svg#icon-linkedin-1"></use>
-                    </svg>
+                    </a>
+                </li>
+                <li class="mobile-icon-item">
+                    <a href="" class="link mobile-icon-link" target="_blank" rel="noopener noreferrer"
+                        aria-label="icon-linkedin">
+                        <svg class="mobile-social-icon" width="24" height="24">
+                            <use href="./images/icons.svg#icon-linkedin-1"></use>
+                        </svg>
 
-                </a>
-            </li>
-        </ul>
+                    </a>
+                </li>
+            </ul>
+        </div>
 
     </div>
 
