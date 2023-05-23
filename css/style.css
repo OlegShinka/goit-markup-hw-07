@@ -1569,11 +1569,8 @@ body {
 
 
 .input-email {
-  /* display: block; */
-  /* width: 100%; */
-  /* width: 398px; */
+  width: 398px;
 
-  min-width: 320px;
   height: 40px;
 
   padding-left: 16px;
@@ -1592,7 +1589,7 @@ body {
 
 @media only screen and (min-width: 768px) {
   .input-email {
-    min-width: 264px;
+    width: 264px;
 
   }
 }
