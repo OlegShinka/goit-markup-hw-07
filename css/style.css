@@ -78,8 +78,23 @@ body {
 /* header style start -----------------------------*/
 
 .header {
+  max-width: 428px;
+  margin: 0 auto;
+
   border-bottom: 1px solid var(--header-bottom-border-color);
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    max-width: 768px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .header {
+    max-width: 1158px;
+  }
 }
 
 .link-logo {
@@ -106,9 +121,22 @@ body {
 }
 
 .main-nav {
+  max-width: 428px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-nav {
+    max-width: 768px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .main-nav {
+    max-width: 1158px;
+  }
 }
 
 .nav {
@@ -138,7 +166,13 @@ body {
 }
 
 .list-nav {
-  display: flex;
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .list-nav {
+    display: flex;
+  }
 }
 
 .link-nav:hover,
@@ -148,14 +182,33 @@ body {
 
 .contacts-list {
   display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 1158px) {
+  .contacts-list {
+    flex-direction: row;
+  }
 }
 
 .contacts {
   font-style: normal;
 }
 
+@media only screen and (max-width: 768px) {
+  .contacts {
+    display: none;
+  }
+}
+
 .contacts-list-item {
   margin-right: 40px;
+}
+
+@media only screen and (min-width: 768px) and (max-width:1158px) {
+  .contacts-list-item {
+    margin-right: 0;
+  }
 }
 
 .contacts-list-item:last-child {
@@ -176,6 +229,18 @@ body {
   color: var(--secondary-text-color);
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1158px) {
+  .contacts-link {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+  }
 }
 
 .contacts-link:hover,
@@ -205,6 +270,136 @@ body {
 .current::after {
   opacity: 1;
 }
+
+/* menu-toggle --------------------- */
+
+
+.menu-toggle {
+  min-height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* .menu-toggle:hover,
+.menu-toggle:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+} */
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 40px;
+  padding-top: 80px;
+  background-color: var(--primary-bg-color);
+  z-index: 999;
+
+  transform: translateX(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: var(--primary-bg-color);
+}
+
+.mobile-menu-nav {
+  margin-bottom: auto;
+}
+
+.mobile-menu-contacts {
+  margin-bottom: 48px;
+}
+
+.mobile-nav-item {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+
+.mobile-nav-link {
+  display: block;
+
+  color: var(--link-span-color);
+  padding-left: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+
+}
+
+.mobile-nav-link:focus {
+  color: var(--active-hover-color);
+}
+
+.mobile-tel-link {
+  display: block;
+
+  color: var(--link-text-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+
+  padding-left: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.mobile-mail-link {
+  display: block;
+  color: var(--secondary-text-color);
+
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+
+  padding-left: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.mobile-icon-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 56px;
+}
+
+
 
 /* header style end  */
 
@@ -236,7 +431,7 @@ body {
 @media only screen and (min-width:1158px) {
   .hero {
     max-width: 1440px;
-
+    min-width: 320px;
     padding-top: 188px;
     padding-bottom: 188px;
   }
@@ -406,7 +601,7 @@ body {
 
 .features-list-desc {
   color: var(--secondary-text-color);
-  width: 396px;
+  max-width: 396px;
 
   font-weight: 500;
   font-size: 16px;
@@ -497,6 +692,7 @@ body {
 .team {
   margin: 0 auto;
   max-width: 428px;
+  min-width: 320px;
 
   padding-top: 96px;
   padding-bottom: 96px;
@@ -627,6 +823,7 @@ body {
 
 .customers {
   max-width: 428px;
+
   margin: 0 auto;
 
   padding-top: 96px;
@@ -886,8 +1083,10 @@ body {
   top: 50%;
   left: 50%;
 
-  width: 408px;
-  min-height: 576px;
+  /* width: 408px;
+  min-height: 576px; */
+  width: 392px;
+  min-height: 586px;
 
   padding: 72px 24px 24px;
 
@@ -1131,15 +1330,56 @@ body {
 
 .footer {
   background-color: var(--secondary-bg-color);
-  padding-top: 100px;
-  padding-bottom: 100px;
+
+  margin: 0 auto;
+  max-width: 428px;
+  min-width: 320px;
+
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    max-width: 768px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .footer {
+    max-width: 1440px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 }
 
 .footer-container {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+
+  row-gap: 72px;
+  column-gap: 24px;
+
   align-items: baseline;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+@media only screen and (min-width: minwidthpx) {
+  .footer-container {}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1157px) {
+  .footer-container {
+    padding-left: 108px;
+    justify-content: start;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .footer-container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
 }
 
 .footer-link {
@@ -1166,13 +1406,15 @@ body {
   color: var(--footer-text-color);
   line-height: 1.5;
   max-width: 264px;
-
+  letter-spacing: 0.02em;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.footer-link-container {
-  margin-right: 120px;
+@media only screen and (min-width: 1158px) {
+  .footer-link-container {
+    margin-right: 120px;
+  }
 }
 
 .footer-icon-list {
@@ -1181,12 +1423,14 @@ body {
   gap: 16px;
 }
 
-.footer-list-item {
+.footer-list-item,
+.mobile-icon-item {
   width: 40px;
   height: 40px;
 }
 
-.footer-icon-link {
+.footer-icon-link,
+.mobile-icon-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1205,7 +1449,8 @@ body {
   background-color: var(--footer-icon-hover);
 }
 
-.footer-icon {
+.footer-icon,
+.mobile-social-icon {
   fill: var(--footer-text-color);
 }
 
@@ -1214,16 +1459,32 @@ body {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  text-align: center;
   color: var(--title-text-color);
   margin-top: 0;
   margin-bottom: 16px;
 }
 
+@media only screen and (min-width: 768px) {
+  .social-container-desc {
+    text-align: start;
+  }
+}
+
 .footer-form {
   display: flex;
-  gap: 24px;
-  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
 
+  align-items: flex-end;
+  justify-content: center;
+
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-form {
+    gap: 24px;
+  }
 }
 
 .footer-form-desc {
@@ -1232,8 +1493,16 @@ body {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  text-align: center;
 
+  margin-top: 0;
   margin-bottom: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-form-desc {
+    text-align: start;
+  }
 }
 
 .wrapper-form-input {
@@ -1242,7 +1511,10 @@ body {
 }
 
 .input-email {
-  width: 264px;
+  display: block;
+  width: 398px;
+  /* max-width: 398px;
+  min-width: 320px; */
   height: 40px;
 
   padding-left: 16px;
@@ -1257,6 +1529,12 @@ body {
   border-radius: 4px;
 
   outline: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .input-email {
+    width: 264px;
+  }
 }
 
 .input-email::placeholder {
