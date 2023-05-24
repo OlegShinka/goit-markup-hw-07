@@ -43,7 +43,8 @@ body {
 
 .container {
   min-width: 320px;
-  max-width: 460px;
+  /* max-width: 460px; */
+  max-width: 428px;
   margin: 0 auto;
 
   padding-right: 16px;
@@ -370,7 +371,7 @@ body {
 
   color: var(--link-text-color);
   font-weight: 700;
-  font-size: 36px;
+  font-size: 30px;
   line-height: 1.11;
 
   letter-spacing: 0.02em;
@@ -731,7 +732,7 @@ body {
 
 .team {
   margin: 0 auto;
-  max-width: 428px;
+  /* max-width: 428px; */
   min-width: 320px;
 
   padding-top: 96px;
@@ -742,7 +743,7 @@ body {
 
 @media only screen and (min-width:768px) {
   .team {
-    max-width: 768px;
+    /* max-width: 768px; */
 
   }
 }
@@ -1295,8 +1296,6 @@ body {
 
 }
 
-
-
 .modal-label-checkbox {
   display: flex;
   gap: 8px;
@@ -1326,16 +1325,6 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-/* .modal-input-checkbox:checked {
-  border-color: var(--active-hover-color);
-  background-image: url(../images/icons/click.svg);
-  background-origin: border-box;
-  background-size: contain;
-  background-repeat: no-repeat;
-} */
-
-.icon-check {}
 
 .checked {
   opacity: 0;
@@ -1389,18 +1378,18 @@ body {
   background-color: var(--secondary-bg-color);
 
   margin: 0 auto;
-  max-width: 428px;
+  /* max-width: 428px; */
   min-width: 320px;
 
   padding-top: 96px;
   padding-bottom: 96px;
 }
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .footer {
     max-width: 768px;
   }
-}
+} */
 
 @media only screen and (min-width: 1158px) {
   .footer {
@@ -1421,10 +1410,6 @@ body {
   justify-content: center;
 }
 
-@media only screen and (min-width: minwidthpx) {
-  .footer-container {}
-}
-
 @media only screen and (min-width: 768px) and (max-width: 1157px) {
   .footer-container {
     padding-left: 108px;
@@ -1440,7 +1425,8 @@ body {
 }
 
 .footer-link {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
 
   font-family: "Raleway", sans-serif;
   font-size: 18px;
@@ -1452,6 +1438,12 @@ body {
   color: var(--link-text-color);
 
   margin-bottom: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-link {
+    justify-content: flex-start;
+  }
 }
 
 .footer-link-text {
@@ -1529,18 +1521,25 @@ body {
 }
 
 .footer-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
 
-  align-items: flex-end;
-  justify-content: center;
+  width: 100%;
+  max-width: 396px;
+
 
 }
 
 @media only screen and (min-width: 768px) {
   .footer-form {
+    /* 1var */
+    display: flex;
+    flex-wrap: nowrap;
+
+    align-items: flex-end;
+    justify-content: flex-start;
+
     gap: 24px;
+
+    max-width: 453px;
   }
 }
 
@@ -1562,17 +1561,24 @@ body {
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .wrapper-form-input {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .wrapper-form-input {
   display: flex;
   flex-direction: column;
+
 }
 
 
 .input-email {
-  width: 398px;
-
+  width: 100%;
   height: 40px;
-
+  max-width: 396px;
   padding-left: 16px;
 
   color: var(--title-text-color);
@@ -1585,12 +1591,13 @@ body {
   border-radius: 4px;
 
   outline: none;
+  margin-bottom: 20px;
 }
 
 @media only screen and (min-width: 768px) {
   .input-email {
     width: 264px;
-
+    margin-bottom: 0;
   }
 }
 
@@ -1603,6 +1610,10 @@ body {
 }
 
 .footer-subscribe-btn {
+
+  /* 1var */
+  margin: auto;
+
   display: flex;
   align-items: center;
   gap: 16px;
@@ -1622,6 +1633,12 @@ body {
   border: none;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-subscribe-btn {
+    margin: 0;
+  }
 }
 
 .footer-subscribe-btn:hover,
