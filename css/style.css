@@ -5,6 +5,8 @@ body {
   background-color: var(--primary-bg-color);
 }
 
+
+
 :root {
   --primary-text-color: #434455;
   --primary-bg-color: #ffffff;
